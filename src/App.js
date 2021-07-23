@@ -41,11 +41,16 @@ function App() {
     );
   };
 
+  //Delete task
+  const deleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+
   return (
     <div className="container">
       <Header />
       <AddTask />
-      <Tasks tasks={tasks} onToggle={toggleReminder} />
+      <Tasks tasks={tasks} onToggle={toggleReminder} onDelete={deleteTask} />
     </div>
   );
 }
