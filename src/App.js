@@ -1,6 +1,7 @@
 import "./App.css";
 import Tasks from "./components/Tasks";
 import Header from "./components/Header";
+import AddTask from "./components/AddTask";
 import { useState } from "react";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
     },
   ]);
 
+  //toggle task Reminder
   const toggleReminder = (id) => {
     setTasks(
       tasks.map((task) =>
@@ -42,6 +44,7 @@ function App() {
   return (
     <div className="container">
       <Header />
+      <AddTask />
       <Tasks tasks={tasks} onToggle={toggleReminder} />
     </div>
   );
